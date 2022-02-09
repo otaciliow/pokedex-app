@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+html,
+body {
+  background: #3c3c3c;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 35rem;
+    padding: 1rem;
+    gap: 1.5rem;
+    margin-top: 4.5rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 15rem;
+      height: 23rem;
+
+      background: red;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+
+.poke-wrapper {
+  font-size: 2.4rem;
+  color: #fcfcfc;
+  padding: 1rem 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .poke-header {
+    position: absolute;
+    top: 0;
+    font-size: 3rem;
+  }
+}
+
+header {
+  height: 4.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  background: #ee1515;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 2.4rem;
+    color: #fcfcfc;
+    font-weight: bold;
+  }
+}

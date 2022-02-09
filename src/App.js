@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import Pokeball from './assets/images/icons/ipokeball.svg';
+import PokemonCard from './components/PokemonCard';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="main-wrapper">
+      <header>
+        <span>Pokédex
+          <img src={Pokeball} alt="Icone de pokebola" />
+        </span>
       </header>
+      <main>
+        <ul className="card-wrapper">
+          <li>
+            <PokemonCard />
+          </li>
+          <li>
+            <PokemonCard />
+          </li>
+          <li>
+            <PokemonCard />
+          </li>
+          <li>
+            <PokemonCard />
+          </li>          
+        </ul>
+      </main>
     </div>
   );
 }
-
-export default App;
