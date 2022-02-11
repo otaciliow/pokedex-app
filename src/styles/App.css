@@ -62,9 +62,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 35rem;
+  width: 30rem;
   height: 7.5rem;
   border-radius: 1rem;
+  list-style: none;
+  cursor: pointer;
   background: #4f4f4f;
 }
 
@@ -100,6 +102,7 @@ body {
 
 .poke-wrapper > img {
   margin-right: 20%;
+  max-width: 5rem;
 }
 
 .poke-wrapper .pokeTipos {
@@ -114,6 +117,80 @@ body {
 
 .poke-wrapper .pokeTipos span {
   font-size: 1.4rem;
+}
+
+.poke-wrapper .pokeTipos img {
+  max-width: 2rem;
+  padding: 0.2rem;
+  border-radius: 50%;
+}
+
+.poke-wrapper .pokeTipos img.normal {
+  background: #a8a77a;
+}
+
+.poke-wrapper .pokeTipos img.fogo {
+  background: #ee8130;
+}
+
+.poke-wrapper .pokeTipos img.agua {
+  background: #6390f0;
+}
+
+.poke-wrapper .pokeTipos img.eletrico {
+  background: #f7d02c;
+}
+
+.poke-wrapper .pokeTipos img.grama {
+  background: #7ac74c;
+}
+
+.poke-wrapper .pokeTipos img.gelo {
+  background: #96d9d6;
+}
+
+.poke-wrapper .pokeTipos img.lutador {
+  background: #c22e28;
+}
+
+.poke-wrapper .pokeTipos img.venenoso {
+  background: #a33ea1;
+}
+
+.poke-wrapper .pokeTipos img.terrestre {
+  background: #e2bf65;
+}
+
+.poke-wrapper .pokeTipos img.voador {
+  background: #a98ff3;
+}
+
+.poke-wrapper .pokeTipos img.psiquico {
+  background: #f95587;
+}
+
+.poke-wrapper .pokeTipos img.inseto {
+  background: #a6b91a;
+}
+
+.poke-wrapper .pokeTipos img.pedra {
+  background: #b6a136;
+}
+
+.poke-wrapper .pokeTipos img.fantasma {
+  background: #735797;
+}
+
+.poke-wrapper .pokeTipos img.dragao {
+  background: #6f35fc;
+}
+
+.poke-wrapper .pokeTipos img.noturno {
+  background: #705746;
+}
+
+.poke-wrapper .pokeTipos img.aco {
+  background: #b7b7ce;
 }
 
 header {

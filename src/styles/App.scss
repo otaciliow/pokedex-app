@@ -13,6 +13,27 @@ body {
   font-family: sans-serif;
 }
 
+// Cores das tipagens:
+
+$normal: #a8a77a;
+$fogo: #ee8130;
+$agua: #6390f0;
+$eletrico: #f7d02c;
+$grama: #7ac74c;
+$gelo: #96d9d6;
+$lutador: #c22e28;
+$venenoso: #a33ea1;
+$terrestre: #e2bf65;
+$voador: #a98ff3;
+$psiquico: #f95587;
+$inseto: #a6b91a;
+$pedra: #b6a136;
+$fantasma: #735797;
+$dragao: #6f35fc;
+$noturno: #705746;
+$aco: #b7b7ce;
+$fada: #d685ad;
+
 .main-wrapper {
   display: flex;
   align-items: center;
@@ -34,9 +55,11 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 35rem;
+      width: 30rem;
       height: 7.5rem;
       border-radius: 1rem;
+      list-style: none;
+      cursor: pointer;
 
       background: #4f4f4f;
 
@@ -66,6 +89,7 @@ body {
 
   > img {
     margin-right: 20%;
+    max-width: 5rem;
   }
 
   .pokeTipos {
@@ -74,6 +98,64 @@ body {
     gap: 1rem;
     span {
       font-size: 1.4rem;
+    }
+
+    img {
+      max-width: 2rem;
+      padding: 0.2rem;
+      border-radius: 50%;
+
+      &.normal {
+        background: $normal;
+      }
+      &.fogo {
+        background: $fogo;
+      }
+      &.agua {
+        background: $agua;
+      }
+      &.eletrico {
+        background: $eletrico;
+      }
+      &.grama {
+        background: $grama;
+      }
+      &.gelo {
+        background: $gelo;
+      }
+      &.lutador {
+        background: $lutador;
+      }
+      &.venenoso {
+        background: $venenoso;
+      }
+      &.terrestre {
+        background: $terrestre;
+      }
+      &.voador {
+        background: $voador;
+      }
+      &.psiquico {
+        background: $psiquico;
+      }
+      &.inseto {
+        background: $inseto;
+      }
+      &.pedra {
+        background: $pedra;
+      }
+      &.fantasma {
+        background: $fantasma;
+      }
+      &.dragao {
+        background: $dragao;
+      }
+      &.noturno {
+        background: $noturno;
+      }
+      &.aco {
+        background: $aco;
+      }
     }
   }
 }
