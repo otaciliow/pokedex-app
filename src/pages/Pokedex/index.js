@@ -24,6 +24,8 @@ export function Pokedex() {
     });
   }, []);
 
+  console.log(pokemonList);
+
     const accentsMap = new Map([
       ["-", "\\s|\\.|_"],
       ["a", "á|à|ã|â|ä"],

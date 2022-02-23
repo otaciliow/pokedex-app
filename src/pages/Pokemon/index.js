@@ -25,7 +25,9 @@ export function Pokemon() {
         .then((res) => {
           setSelectedPokemon(res.data[0]);
         });
-      }, []);
+      }, [pokemonId]);
+
+      console.log(pokemon);
 
       const accentsMap = new Map([
         ["-", "\\s|\\.|_"],
