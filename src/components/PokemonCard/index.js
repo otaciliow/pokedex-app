@@ -1,5 +1,4 @@
 import {React} from 'react';
-// import { useNavigate } from 'react-router-dom';
 
 export default function PokemonCard(props) {
     
@@ -8,9 +7,6 @@ export default function PokemonCard(props) {
     const pokeTipo1 = props.pokeTipo1;
     const pokeTipo2 = props.pokeTipo2;
 
-    // Ajustar navegação!!
-    // const navigate = useNavigate();
-
         return(            
         <div className={`poke-wrapper ${pokeTipo1}`}>
             <img src={`./assets/images/pokemons/${pokeNum}.gif`} alt={`Imagem de um ${pokemon}`} />
@@ -18,7 +14,7 @@ export default function PokemonCard(props) {
                 <span>{pokemon}</span>
                 <div className="pokeTipos">
                     <img src={`./assets/images/tipos/${pokeTipo1}.svg`} alt={`Icone de tipo ${pokeTipo1}`} className={pokeTipo1} />
-                    {pokeTipo2 ? (
+                    {(pokeTipo2 !== 'null') ? (
                         <img src={`./assets/images/tipos/${pokeTipo2}.svg`} alt={`Icone de tipo ${pokeTipo2}`} className={pokeTipo2} />
                     ) : (
                     <></>

@@ -1,17 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-html,
-body {
-  background: #3c3c3c;
-  height: 100vh;
-  width: 100vw;
-  font-family: sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 // Cores das tipagens:
 
@@ -34,151 +21,31 @@ $noturno: #705746;
 $aco: #b7b7ce;
 $fada: #d685ad;
 
+// Valores globais
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+html,
+body {
+  background: #3c3c3c;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+}
+
 .main-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  .card-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 35rem;
-    padding: 1rem;
-    gap: 1.5rem;
-    margin-top: 4.5rem;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 30rem;
-      height: 7.5rem;
-      border-radius: 1rem;
-      list-style: none;
-      cursor: pointer;
-
-      background: #4f4f4f;
-
-      &:hover {
-        transform: scale(1.05);
-        transition: all 0.2s ease;
-      }
-    }
-  }
 }
 
-.poke-wrapper {
-  font-size: 2.4rem;
-  color: #fcfcfc;
-  padding: 1rem 1.5rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  width: 100%;
+// Estilização da página Pokedex
+@import "./pokedex";
 
-  span {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-
-  > img {
-    margin-right: 20%;
-    max-width: 5rem;
-  }
-
-  .pokeTipos {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    span {
-      font-size: 1.4rem;
-    }
-
-    img {
-      max-width: 2rem;
-      padding: 0.2rem;
-      border-radius: 50%;
-
-      &.normal {
-        background: $normal;
-      }
-      &.fogo {
-        background: $fogo;
-      }
-      &.agua {
-        background: $agua;
-      }
-      &.eletrico {
-        background: $eletrico;
-      }
-      &.grama {
-        background: $grama;
-      }
-      &.gelo {
-        background: $gelo;
-      }
-      &.lutador {
-        background: $lutador;
-      }
-      &.venenoso {
-        background: $venenoso;
-      }
-      &.terrestre {
-        background: $terrestre;
-      }
-      &.voador {
-        background: $voador;
-      }
-      &.psiquico {
-        background: $psiquico;
-      }
-      &.inseto {
-        background: $inseto;
-      }
-      &.pedra {
-        background: $pedra;
-      }
-      &.fantasma {
-        background: $fantasma;
-      }
-      &.dragao {
-        background: $dragao;
-      }
-      &.noturno {
-        background: $noturno;
-      }
-      &.aco {
-        background: $aco;
-      }
-    }
-  }
-}
-
-header {
-  height: 4.5rem;
-  width: 100%;
-  padding: 0.5rem;
-  background: #ee1515;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-
-  > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-size: 2.4rem;
-    color: #fcfcfc;
-    font-weight: bold;
-  }
-}
+// Estilização da página Pokemon
+@import "./pokemon";
