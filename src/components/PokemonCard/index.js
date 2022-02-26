@@ -19,6 +19,8 @@ export default function PokemonCard(props) {
                     ) : (
                     <></>
                     )}
+                    <span className="poke-num-fixed">{`# ${pokeNum}`}</span>
+                    <div className="pokeball-bg"></div>
                 </div>
             </div>
         </div>

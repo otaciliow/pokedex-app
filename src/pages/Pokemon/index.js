@@ -1,61 +1,53 @@
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { createClient } from '@supabase/supabase-js';
+
 import { useNavigate } from 'react-router-dom';
+
+import { useSlugify } from '../../hooks/useSlugify';
 
 import ReturnIcon from '../../assets/images/icons/ireturn.svg';
 
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZ2Vwd2pjdW1sdGdyc2J2ZHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQzMjU5MjAsImV4cCI6MTk1OTkwMTkyMH0.F5IfLLndLFbEEhDXIXTPmSm98-YWfIVBH64SIk4kMUc';
-const SUPABASE_URL = 'https://aigepwjcumltgrsbvdwb.supabase.co';
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = createClient('https://aigepwjcumltgrsbvdwb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZ2Vwd2pjdW1sdGdyc2J2ZHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQzMjU5MjAsImV4cCI6MTk1OTkwMTkyMH0.F5IfLLndLFbEEhDXIXTPmSm98-YWfIVBH64SIk4kMUc');
 
 export function Pokemon() {
 
     const params = useParams();
-    const pokemonId = params.pokemonId;   
+    const pokemonId = params.pokemonId; 
+
+    const slugify = useSlugify();  
     const [selectedPokemon, setSelectedPokemon]  = useState('');
 
     const navigate = useNavigate();
 
     const pokemon = useEffect(() => {
+
+        document.querySelector('.loading-banner').classList.add('visible');
+
         supabaseClient
         .from('pokemons')
         .select('*')
         .eq('id', pokemonId)
         .then((res) => {
           setSelectedPokemon(res.data[0]);
+          document.querySelector('.loading-banner').classList.remove('visible');
+          console.log(pokemon)
         });
-      }, [pokemonId]);
-
-      console.log(pokemon);
-
-      const accentsMap = new Map([
-        ["-", "\\s|\\.|_"],
-        ["a", "á|à|ã|â|ä"],
-        ["e", "é|è|ê|ë"],
-        ["i", "í|ì|î|ï"],
-        ["o", "ó|ò|ô|õ|ö"],
-        ["u", "ú|ù|û|ü"],
-        ["c", "ç"],
-        ["n", "ñ"]
-      ]);
-      
-    const reducer = (acc, [key]) => acc.replace(new RegExp(accentsMap.get(key), "gi"), key);
-      
-    const slugify = (text) => [...accentsMap].reduce(reducer, text.toLowerCase());
+      }, [pokemonId]);    
 
     const loweredTipo1 = slugify(`${selectedPokemon.tipo1}`);
     const loweredTipo2 = slugify(`${selectedPokemon.tipo2}`);
     
-
     return (
         <div className="pokemon-page-wrapper">
+            <div className="loading-banner"></div>
             <div className="pokeDescHeader">
                 <button onClick={() => navigate('/')}>
                     <img src={ReturnIcon} alt="Ícone de retorno" />
                 </button>
                 <div className="pokeInfo">
-                    <span>{`#${selectedPokemon.id}`}</span>
+                    <span>{`# ${selectedPokemon.id}`}</span>
                     <span>{selectedPokemon.nome}</span>
                     <div className="pokeTipos">
                     <img src={`./assets/images/tipos/${loweredTipo1}.svg`} alt={`Icone de tipo ${loweredTipo1}`} className={loweredTipo1} />

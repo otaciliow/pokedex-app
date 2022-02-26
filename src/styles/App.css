@@ -31,6 +31,28 @@ body {
           flex-direction: column;
 }
 
+@-webkit-keyframes loadingEffect {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingEffect {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .card-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,10 +65,17 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-width: 98rem;
+  max-width: 110rem;
   padding: 1rem;
   gap: 1.5rem;
   margin-top: 4.5rem;
+}
+
+.card-wrapper h2 {
+  padding: 1.5rem;
+  color: #fcfcfc;
+  font-size: 1.6rem;
+  text-align: justify;
 }
 
 .card-wrapper li {
@@ -63,19 +92,61 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30rem;
-  height: 7.5rem;
+  width: 32.5rem;
+  height: 8.5rem;
   border-radius: 1rem;
   list-style: none;
   cursor: pointer;
+  -webkit-box-shadow: 0.05rem 0.05rem #000000;
+          box-shadow: 0.05rem 0.05rem #000000;
   background: #4f4f4f;
+  position: relative;
 }
 
 .card-wrapper li:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+}
+
+.card-wrapper li .pokeball-bg {
+  height: 6.5rem;
+  width: 6.5rem;
+  background-image: url("../assets/images/icons/ipokeball.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  opacity: 0.1;
+  position: absolute;
+  right: 0.1rem;
+  bottom: 0.1rem;
+}
+
+.loading-banner {
+  width: 100vw;
+  height: 100vh;
+  z-index: 88;
+  background-image: url("../assets/images/icons/irefresh.svg");
+  background-size: 4rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+}
+
+.loading-banner.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation-name: loadingEffect;
+          animation-name: loadingEffect;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 6;
+          animation-iteration-count: 6;
+  position: absolute;
+  top: 0;
 }
 
 .poke-wrapper {
@@ -89,9 +160,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  gap: 5.5rem;
   height: 100%;
   width: 100%;
 }
@@ -103,8 +172,7 @@ body {
 }
 
 .poke-wrapper > img {
-  margin-right: 20%;
-  max-width: 5rem;
+  width: 5rem;
 }
 
 .pokeTipos {
@@ -119,6 +187,12 @@ body {
 
 .pokeTipos span {
   font-size: 1.4rem;
+}
+
+.pokeTipos .poke-num-fixed {
+  position: absolute;
+  top: 0.3rem;
+  right: 2rem;
 }
 
 .pokeTipos img {
@@ -211,7 +285,7 @@ header {
           align-items: center;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 99;
 }
 
 header > span {
@@ -299,6 +373,10 @@ header > span {
   font-weight: bold;
 }
 
+.pokeDescHeader .pokeInfo span + span {
+  font-size: 2.6rem;
+}
+
 .pokeDescHeader .pokeTipos {
   max-width: 5.5rem;
   margin-top: 0.2rem;
@@ -324,7 +402,7 @@ header > span {
 }
 
 .pokeDescricao {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   text-align: justify;
   padding: 1.1rem;
 }
