@@ -1,27 +1,33 @@
 import { React, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// supabase import
 import { createClient } from '@supabase/supabase-js';
 
+// custom hook import (slugify)
 import { useSlugify } from '../../hooks/useSlugify';
 
 import '../../styles/App.css';
 
 import PokemonCard from '../../components/PokemonCard';
 
-const supabaseClient = createClient('https://aigepwjcumltgrsbvdwb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZ2Vwd2pjdW1sdGdyc2J2ZHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQzMjU5MjAsImV4cCI6MTk1OTkwMTkyMH0.F5IfLLndLFbEEhDXIXTPmSm98-YWfIVBH64SIk4kMUc');
+// instance supabase connection
+const supabaseClient = createClient('https://ykpgsjwcszoiuxcohsub.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlrcGdzandjc3pvaXV4Y29oc3ViIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDM5NjIsImV4cCI6MTk2MzYxOTk2Mn0.DfUXaVlUy0AnPFTPGXT5xmXNAc9bT_sWgqBsusq2GYk');
 
 export function Pokedex() {
 
   const navigate = useNavigate();
   const [currentPokemons, setCurrentPokemons] = useState([]);
 
+  // custom hook (slugify)
   const slugify = useSlugify();
 
+  // render list of pokémons present on the database
   const pokemonList = useEffect(() => {
 
     document.querySelector('.loading-banner').classList.add('visible');
 
+    // supabase query
     supabaseClient
     .from('pokemons')
     .select('*')
@@ -44,8 +50,8 @@ export function Pokedex() {
                 <PokemonCard                   
                   pokeName={currentPokemons.nome} 
                   pokeNumero={currentPokemons.id} 
-                  pokeTipo1={slugify(`${currentPokemons.tipo1}`)}
-                  pokeTipo2={slugify(`${currentPokemons.tipo2}`)}
+                  pokeType1={slugify(`${currentPokemons.tipo1}`)}
+                  pokeType2={slugify(`${currentPokemons.tipo2}`)}
                 />
               </li>
             )

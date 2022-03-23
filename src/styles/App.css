@@ -175,7 +175,7 @@ body {
   width: 5rem;
 }
 
-.pokeTipos {
+.pokeTypes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,87 +185,87 @@ body {
   gap: 1rem;
 }
 
-.pokeTipos span {
+.pokeTypes span {
   font-size: 1.4rem;
 }
 
-.pokeTipos .poke-num-fixed {
+.pokeTypes .poke-num-fixed {
   position: absolute;
   top: 0.3rem;
   right: 2rem;
 }
 
-.pokeTipos img {
+.pokeTypes img {
   max-width: 2rem;
   padding: 0.2rem;
   border-radius: 50%;
 }
 
-.pokeTipos img.normal {
+.pokeTypes img.normal {
   background: #a8a77a;
 }
 
-.pokeTipos img.fogo {
+.pokeTypes img.fogo {
   background: #ee8130;
 }
 
-.pokeTipos img.agua {
+.pokeTypes img.agua {
   background: #6390f0;
 }
 
-.pokeTipos img.eletrico {
+.pokeTypes img.eletrico {
   background: #f7d02c;
 }
 
-.pokeTipos img.grama {
+.pokeTypes img.grama {
   background: #7ac74c;
 }
 
-.pokeTipos img.gelo {
+.pokeTypes img.gelo {
   background: #96d9d6;
 }
 
-.pokeTipos img.lutador {
+.pokeTypes img.lutador {
   background: #c22e28;
 }
 
-.pokeTipos img.venenoso {
+.pokeTypes img.venenoso {
   background: #a33ea1;
 }
 
-.pokeTipos img.terrestre {
+.pokeTypes img.terrestre {
   background: #e2bf65;
 }
 
-.pokeTipos img.voador {
+.pokeTypes img.voador {
   background: #a98ff3;
 }
 
-.pokeTipos img.psiquico {
+.pokeTypes img.psiquico {
   background: #f95587;
 }
 
-.pokeTipos img.inseto {
+.pokeTypes img.inseto {
   background: #a6b91a;
 }
 
-.pokeTipos img.pedra {
+.pokeTypes img.pedra {
   background: #b6a136;
 }
 
-.pokeTipos img.fantasma {
+.pokeTypes img.fantasma {
   background: #735797;
 }
 
-.pokeTipos img.dragao {
+.pokeTypes img.dragao {
   background: #6f35fc;
 }
 
-.pokeTipos img.noturno {
+.pokeTypes img.noturno {
   background: #705746;
 }
 
-.pokeTipos img.aco {
+.pokeTypes img.aco {
   background: #b7b7ce;
 }
 
@@ -377,12 +377,12 @@ header > span {
   font-size: 2.6rem;
 }
 
-.pokeDescHeader .pokeTipos {
+.pokeDescHeader .pokeTypes {
   max-width: 5.5rem;
   margin-top: 0.2rem;
 }
 
-.pokeDescHeader .pokeTipos img {
+.pokeDescHeader .pokeTypes img {
   max-width: 2rem;
   border-radius: 50%;
 }
@@ -395,13 +395,13 @@ header > span {
   width: 12.5rem;
 }
 
-.pokeTiposNomes {
+.pokeTypesNames {
   font-size: 2.2rem;
   text-shadow: 0.05rem 0.05rem #000000;
   font-style: italic;
 }
 
-.pokeDescricao {
+.pokeDescription {
   font-size: 2.4rem;
   text-align: justify;
   padding: 1.1rem;

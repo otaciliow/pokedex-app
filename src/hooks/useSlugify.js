@@ -1,5 +1,8 @@
+// Slugify replaces every special and upper-cased characters to make sure that only allowed lower-cased characters will be used
+
 export function useSlugify() {
     const accentsMap = new Map([
+      // allowed characters
         ["-", "\\s|\\.|_"],
         ["a", "á|à|ã|â|ä"],
         ["e", "é|è|ê|ë"],

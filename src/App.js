@@ -2,9 +2,11 @@ import { React } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/App.css';
 
+// Pages imports
 import { Pokedex } from './pages/Pokedex';
 import { Pokemon } from './pages/Pokemon';
 
+// Pokeball icon
 import Pokeball from './assets/images/icons/ipokeball.svg';
 
 export default function App() {

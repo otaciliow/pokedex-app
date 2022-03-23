@@ -4,18 +4,18 @@ export default function PokemonCard(props) {
     
     const pokemon = props.pokeName;
     const pokeNum = props.pokeNumero;
-    const pokeTipo1 = props.pokeTipo1;
-    const pokeTipo2 = props.pokeTipo2;
+    const pokeType1 = props.pokeType1;
+    const pokeType2 = props.pokeType2;
 
         return(            
-        <div className={`poke-wrapper ${pokeTipo1}`}>
+        <div className={`poke-wrapper ${pokeType1}`}>
             <img src={`./assets/images/pokemons/${pokeNum}.gif`} alt={`Imagem de um ${pokemon}`} />
             <div className="pokeInfos">
                 <span>{pokemon}</span>
-                <div className="pokeTipos">
-                    <img src={`./assets/images/tipos/${pokeTipo1}.svg`} alt={`Icone de tipo ${pokeTipo1}`} className={pokeTipo1} />
-                    {(pokeTipo2 !== 'null') ? (
-                        <img src={`./assets/images/tipos/${pokeTipo2}.svg`} alt={`Icone de tipo ${pokeTipo2}`} className={pokeTipo2} />
+                <div className="pokeTypes">
+                    <img src={`./assets/images/tipos/${pokeType1}.svg`} alt={`Icone de tipo ${pokeType1}`} className={pokeType1} />
+                    {(pokeType2 !== 'null') ? (
+                        <img src={`./assets/images/tipos/${pokeType2}.svg`} alt={`Icone de tipo ${pokeType2}`} className={pokeType2} />
                     ) : (
                     <></>
                     )}
